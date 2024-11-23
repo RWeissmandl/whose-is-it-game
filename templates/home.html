@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Upload your image for each category {% endblock %}
+{% block nav %}<a href="{{ url_for('play') }}">Click here to view images</a>{%endblock%}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{% block content %}
+    <h2>Upload your image for each category</h2>
+{% endblock %}

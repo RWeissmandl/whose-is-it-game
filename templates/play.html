@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Guess whose photo this is! {% endblock %}
+{% block nav %}<a href="{{ url_for('home') }}">Click here to upload images</a>{%endblock%}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    <div class="photos">
+        <!-- <img src="{{ url_for('static', filename='uploads/keys/photo1.jpg') }}" alt="Photo 1">
+        <img src="{{ url_for('static', filename='uploads/keys/photo2.jpg') }}" alt="Photo 2"> -->
+    </div>
+{% endblock %}

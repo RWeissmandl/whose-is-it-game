@@ -1,0 +1,41 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Styles */
+body {
+    font-family: 'Verdana', sans-serif;  /* Simple, readable font */
+    background-color: #f4f4f4;  /* Light gray background */
+    color: #333;  /* Text color */
+    text-align: center;
+    padding: 0 20px;  /* Padding to avoid text touching edges */
+}
+
+/* Header Styles */
+header {
+    background-color: #333;  /* Dark header */
+    color: white;
+    padding: 40px 0 20px;  /* Increased padding for spacing */
+    text-align: center;
+}
+
+/* Header title font */
+header h1 {
+    font-family: 'Georgia', serif;  /* Elegant serif font for the title */
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Content Area */
+#content {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
