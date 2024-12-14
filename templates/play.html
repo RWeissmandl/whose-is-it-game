@@ -7,8 +7,24 @@
 {% endblock %}
 {% block content %}
     <h2>{{ title }}</h2>
-    <div class="photos">
-        <!-- <img src="{{ url_for('static', filename='uploads/keys/photo1.jpg') }}" alt="Photo 1">
-        <img src="{{ url_for('static', filename='uploads/keys/photo2.jpg') }}" alt="Photo 2"> -->
+    <h2>Categories and Images:</h2>
+    <div>file path {{file_path}}</div>
+    <div>images {{images}}</div>
+    <div>file paths {{file_paths}}</div>
+    <div>category images: {{ category_images }}</div>
+    <div>{{array_test}}</div>
+    <div>
+        {% for category in category_images %}    
+            {% for item in category_images[category] %}    
+                {{ item }}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div>
+        {% for category in category_images %}    
+            {% for item in category_images[category] %}    
+                <img src="static/uploads/{{ item }}" width="50" height="50"/>
+            {% endfor %}
+        {% endfor %}
     </div>
 {% endblock %}
