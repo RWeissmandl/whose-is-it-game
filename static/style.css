@@ -1,41 +1,143 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and General Styles */
 body {
-    font-family: 'Verdana', sans-serif;  /* Simple, readable font */
-    background-color: #f4f4f4;  /* Light gray background */
-    color: #333;  /* Text color */
-    text-align: center;
-    padding: 0 20px;  /* Padding to avoid text touching edges */
-}
-
-/* Header Styles */
-header {
-    background-color: #333;  /* Dark header */
-    color: white;
-    padding: 40px 0 20px;  /* Increased padding for spacing */
+    font-family: 'Verdana', sans-serif;
+    background-color: #f8f6e3;
+    color: #333;
     text-align: center;
 }
 
-/* Header title font */
-header h1 {
-    font-family: 'Georgia', serif;  /* Elegant serif font for the title */
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-/* Content Area */
-#content {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
+.spacing {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    margin: 0 auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spacingContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  
+    align-items: center;
+}
+
+/* Prevent the h2 text from wrapping to a new line */
+h2 {
+    white-space: nowrap;
+}
+
+/* Adjust h2 font-size on smaller screens to ensure it fits on one line */
+@media (max-width: 400px) {
+    h2 {
+        font-size: 16px;
+    }
+}
+
+.previewImage {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.banner {
+    background-color: #c00; /* festive red */
+    color: white;
+    padding: 30px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px; /* adds space between h1 and nav */
+}
+
+.banner h1 {
+    margin: 0; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* The nav link in the banner */
+.banner nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.banner nav a:hover {
+    text-decoration: underline;
+}
+
+.previewArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonRow {
+    display: flex;
+    gap: 10px; /* space between Cancel and Upload */
+}
+
+.category-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+.category-container img {
+    cursor: pointer;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+#preview-area {
+    margin-top: 20px;
+}
+#preview-area img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    justify-items: center;
+    margin: 0 auto; 
+}
+
+.category-container img {
+    cursor: pointer;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#preview-area img.large-preview {
+    max-width: 600px;
+    max-height: 600px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    margin-top: 20px;
 }

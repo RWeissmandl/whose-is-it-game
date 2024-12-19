@@ -1,30 +1,49 @@
 {% extends "base.html" %}
-
 {% block title %} Guess whose photo this is! {% endblock %}
 {% block nav %}<a href="{{ url_for('home') }}">Click here to upload images</a>{%endblock%}
 {% block head %}
     {{super()}}
 {% endblock %}
 {% block content %}
+<div class="spacing">
     <h2>{{ title }}</h2>
-    <h2>Categories and Images:</h2>
-    <div>file path {{file_path}}</div>
-    <div>images {{images}}</div>
-    <div>file paths {{file_paths}}</div>
-    <div>category images: {{ category_images }}</div>
-    <div>{{array_test}}</div>
-    <div>
-        {% for category in category_images %}    
-            {% for item in category_images[category] %}    
-                {{ item }}
-            {% endfor %}
+    <div class="category-buttons">
+        {% for category in category_images %}
+            <button onclick="showCategory('{{ category }}')">{{ category }}</button>
         {% endfor %}
     </div>
-    <div>
-        {% for category in category_images %}    
-            {% for item in category_images[category] %}    
-                <img src="static/uploads/{{ item }}" width="50" height="50"/>
+    {% for category in category_images %}
+        <div id="{{ category }}-container" class="category-container grid" style="display:none;">
+            {% for item in category_images[category] %}
+                <img src="static/uploads/{{ item }}" alt="{{ item }}"/>
             {% endfor %}
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
+    <div id="preview-area"></div>
+</div>
+<script>
+    function showCategory(category) {
+        const allContainers = document.querySelectorAll('.category-container');
+        allContainers.forEach(container => container.style.display = 'none');
+    
+        const catContainer = document.getElementById(category + '-container');
+        if (catContainer) {
+            catContainer.style.display = 'grid';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.category-container img');
+        const previewArea = document.getElementById('preview-area');
+        images.forEach((img) => {
+            img.addEventListener('click', () => {
+                previewArea.innerHTML = '';
+                const largeImg = document.createElement('img');
+                largeImg.src = img.src;
+                largeImg.classList.add('large-preview');
+                previewArea.appendChild(largeImg);
+            });
+        });
+    });
+</script>
 {% endblock %}

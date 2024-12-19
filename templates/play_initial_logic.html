@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Guess whose photo this is! {% endblock %}
+{% block nav %}<a href="{{ url_for('home') }}">Click here to upload images</a>{%endblock%}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    <div>
+        {% for category in category_images %}    
+            {% for item in category_images[category] %}    
+                <img src="static/uploads/{{ item }}" width="50" height="50"/>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

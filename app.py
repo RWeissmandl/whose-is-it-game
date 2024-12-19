@@ -32,12 +32,10 @@ def play():
     array_test = [1, 2, 3]
     for category in categories:
         file_path = os.path.join(uploads_folder, category)
-        images = os.listdir(file_path) #list all images in the file_path
-        #file_paths = [os.path.join(file_path, image) for image in images]
-        #file_paths = [os.path.join('uploads', category, image) for image in images] #an array with a filepath to each image
+        images = os.listdir(file_path) 
         file_paths = [os.path.join(category, image) for image in images]
         category_images[category] = file_paths
-    return render_template('play.html', title=title, categories=categories, category_images=category_images, file_path=file_path, images=images, file_paths=file_paths, array_test=array_test)
+    return render_template('play.html', title=title, categories=categories, category_images=category_images)
 
 if __name__ == '__main__':
     app.run(debug=True)
