@@ -26,12 +26,10 @@ body {
     align-items: center;
 }
 
-/* Prevent the h2 text from wrapping to a new line */
 h2 {
     white-space: nowrap;
 }
 
-/* Adjust h2 font-size on smaller screens to ensure it fits on one line */
 @media (max-width: 400px) {
     h2 {
         font-size: 16px;
@@ -44,27 +42,29 @@ h2 {
 }
 
 .banner {
-    background-color: #c00; /* festive red */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 30px 0; 
     display: flex;
     align-items: center;
     justify-content: center; 
-    gap: 20px; /* adds space between h1 and nav */
+    gap: 20px; 
 }
 
 .banner h1 {
     margin: 0; 
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
 }
 
-/* The nav link in the banner */
 .banner nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .banner nav a:hover {
@@ -80,7 +80,7 @@ h2 {
 
 .buttonRow {
     display: flex;
-    gap: 10px; /* space between Cancel and Upload */
+    gap: 10px; 
 }
 
 .category-buttons {
