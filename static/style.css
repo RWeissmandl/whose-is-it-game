@@ -85,10 +85,19 @@ h2 {
 
 .category-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     margin-bottom: 20px;
 }
+
+@media (max-width: 600px) {
+    .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));

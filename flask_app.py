@@ -4,7 +4,7 @@ import time
 
 app = Flask(__name__)
 
-categories = ["keys", "coffee_mug", "kitchen_table", "bed"]
+categories = ["test", "keys", "coffee_mug", "kitchen_table", "bed", "wallet", "water_bottle", "sunglasses", "headphones", "favourite_food", "item_of_jewelry"]
 uploads_folder = os.path.join("static", "uploads")
 for category in categories:
     os.makedirs(os.path.join(uploads_folder, category), exist_ok=True)
